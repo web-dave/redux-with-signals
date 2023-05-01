@@ -1,0 +1,9 @@
+<p>list works!</p>
+<h5 *ngFor="let item of liste()">
+  {{ item.id }} <span>{{ item.name }}</span>
+  <input type="text" #input />
+  <button (click)="updateItem(input.value, item)">💾</button
+  ><button (click)="deleteItem(item)">❌</button>
+</h5>
+<input type="text" #addinput />
+<button (click)="addItem(addinput.value)">➕</button>
