@@ -11,10 +11,8 @@ import { Actions, IItem, StateService } from '../state.service';
 })
 export class ListComponent {
   store = inject(StateService);
-  liste = this.store.select((data) => {
-    console.log('Liste gelesen', data);
-    return data.liste;
-  });
+  liste = this.store.select((data) => data.liste);
+
   updateItem(value: string, item: IItem) {
     this.store.dispatch(new Actions.Update({ ...item, name: value }));
   }

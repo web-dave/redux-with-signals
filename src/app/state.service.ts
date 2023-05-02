@@ -43,19 +43,8 @@ export class StateService {
   private state = signal(initialState);
 
   // select returns a signal
-
-  //ToDo: Make it Memoized
   select<T>(selector: (state: IState) => T): Signal<T> {
-    return computed(() => {
-      return selector(this.state());
-      // const value = selector(this.state());
-      //       let mem!: T;
-      //       if(value != mem){
-      //         mem = value;
-      //         return value
-      //       }
-      // return (value != mem)?value: undefined;
-    });
+    return computed(() => selector(this.state()));
   }
 
   dispatch(a: Actions.IAction) {

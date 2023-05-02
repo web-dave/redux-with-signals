@@ -10,9 +10,7 @@ import { StateService } from '../state.service';
   styleUrls: ['./item.component.scss'],
 })
 export class ItemComponent {
-  item = inject(StateService).select((data) => {
-    console.log('Item Gelesen', data.liste[2]);
-
-    return data.liste.find((item) => item.id === 3);
-  });
+  item = inject(StateService).select((data) =>
+    data.liste.find((item) => item.id === 3)
+  );
 }
